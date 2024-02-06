@@ -143,6 +143,8 @@ func (y *YamlAction) UnmarshalYAML(unmarshal func(interface{}) error) error {
 		y.Action = &DownloadAction{}
 	case "recipe":
 		y.Action = &RecipeAction{}
+	case "split":
+		y.Action = &SplitAction{}
 	default:
 		return fmt.Errorf("Unknown action: %v", aux.Action)
 	}
